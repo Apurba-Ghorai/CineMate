@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#09090d">
+
+
+
+    <title>CineMate | Discover Your Next Favourite</title>
+
+
+
+    <meta name="description" content="Discover movies, explore genres and get personalized movie recommendations with CineMate.">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="ambient ambient-one"></div>
+
+    <div class="ambient ambient-two"></div>
+
+
+
+
+
+    <!-- =================================================
+
+         NAVIGATION
+
+    ================================================== -->
+
+
+
+    <header class="navbar">
+
+
+
+        <a href="#" class="brand" aria-label="CineMate home">
+
+            <span class="brand-icon">C</span>
+
+            <span>Cine<span class="brand-highlight">Mate</span></span>
+
+        </a>
+
+
+
+        <nav class="nav-links">
+
+            <a href="#home" class="nav-link active">Home</a>
+
+            <a href="#discover" class="nav-link">Discover</a>
+
+            <a href="#recommendations" class="nav-link">For You</a>
+
+            <a href="#watchlist" class="nav-link">Watchlist</a>
+
+        </nav>
+
+
+
+        <div class="nav-actions">
+
+
+
+            <button
+
+                class="icon-button"
+
+                id="navSearchButton"
+
+                aria-label="Go to search"
+
+            >
+
+                <span>⌕</span>
+
+            </button>
+
+
+
+            <a href="#watchlist" class="watchlist-link">
+
+                <span>♡</span>
+
+                <span>My List</span>
+
+                <span class="watchlist-count" id="watchlistCount">0</span>
+
+            </a>
+
+
+
+            <!-- ACCOUNT AREA -->
+
+
+
+            <div class="account-area" id="accountArea">
+
+
+
+                <!-- Guest account button -->
+
+
+
+                <button
+
+                    class="account-button"
+
+                    id="accountButton"
+
+                    type="button"
+
+                >
+
+                    <span>♙</span>
+
+                    <span>Sign In</span>
+
+                </button>
+
+
+
+                <!-- Logged-in account -->
+
+
+
+                <div class="user-account" id="userAccount" hidden>
+
+
+
+                    <div class="user-avatar" id="userAvatar">
+
+                        U
+
+                    </div>
+
+
+
+                    <div class="user-account-info">
+
+                        <span class="user-greeting">WELCOME</span>
+
+                        <strong id="loggedInName">User</strong>
+
+                    </div>
+
+
+
+                    <button
+
+                        class="logout-button"
+
+                        id="logoutButton"
+
+                        type="button"
+
+                    >
+
+                        Logout
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </header>
+
+
+
+
+
+    <main>
+
+
+
+        <!-- =================================================
+
+             HERO SECTION
+
+        ================================================== -->
+
+
+
+        <section class="hero-section" id="home">
+
+
+
+            <div class="hero-content">
+
+
+
+                <div class="eyebrow">
+
+                    <span class="live-dot"></span>
+
+                    YOUR PERSONAL MOVIE UNIVERSE
+
+                </div>
+
+
+
+                <h1>
+
+                    Every movie has<br>
+
+                    a <span>story.</span>
+
+                </h1>
+
+
+
+                <p class="hero-description">
+
+                    Find hidden gems, explore unforgettable stories
+
+                    and discover movies that match your taste.
+
+                </p>
+
+
+
+                <div class="hero-buttons">
+
+
+
+                    <a href="#discover" class="primary-button">
+
+                        Explore Movies <span>→</span>
+
+                    </a>
+
+
+
+                    <a href="#recommendations" class="secondary-button">
+
+                        Get Recommendations
+
+                    </a>
+
+
+
+                </div>
+
+
+
+                <div class="hero-stats">
+
+
+
+                    <div>
+
+                        <strong>DISCOVER</strong>
+
+                        <span>New favourites</span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <strong>EXPLORE</strong>
+
+                        <span>Every genre</span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <strong>ENJOY</strong>
+
+                        <span>Your movie journey</span>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="hero-visual">
+
+
+
+                <div class="hero-orbit orbit-one"></div>
+
+                <div class="hero-orbit orbit-two"></div>
+
+                <div class="hero-glow"></div>
+
+
+
+                <div class="hero-poster">
+
+
+
+                    <div class="poster-placeholder">
+
+
+
+                        <span class="poster-star">✦</span>
+
+
+
+                        <span class="poster-title">
+
+                            YOUR NEXT<br>
+
+                            FAVOURITE<br>
+
+                            MOVIE
+
+                        </span>
+
+
+
+                        <span class="poster-caption">
+
+                            THE CINEMATIC EXPERIENCE
+
+                        </span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="floating-card floating-card-top">
+
+
+
+                    <span class="floating-icon">✦</span>
+
+
+
+                    <div>
+
+                        <strong>Discover more</strong>
+
+                        <small>Movies picked for you</small>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="floating-card floating-card-bottom">
+
+
+
+                    <span class="floating-icon">♡</span>
+
+
+
+                    <div>
+
+                        <strong>Your collection</strong>
+
+                        <small>Save what you love</small>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- =================================================
+
+             SEARCH SECTION
+
+        ================================================== -->
+
+
+
+        <section class="search-section" id="search">
+
+
+
+            <div class="section-heading">
+
+
+
+                <div>
+
+                    <span class="section-kicker">FIND YOUR MOVIE</span>
+
+                    <h2>What are you <span>watching?</span></h2>
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <form class="search-box" id="searchForm">
+
+
+
+                <span class="search-icon">⌕</span>
+
+
+
+                <input
+
+                    type="search"
+
+                    id="searchInput"
+
+                    placeholder="Search movies by title..."
+
+                    autocomplete="off"
+
+                    required
+
+                >
+
+
+
+                <button type="submit" class="search-button">
+
+                    Search Movies
+
+                </button>
+
+
+
+            </form>
+
+
+
+            <div id="searchMessage" class="message" role="status"></div>
+
+
+
+            <div id="searchResults" class="movie-grid"></div>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- =================================================
+
+             DISCOVER SECTION
+
+        ================================================== -->
+
+
+
+        <section class="content-section" id="discover">
+
+
+
+            <div class="section-heading">
+
+
+
+                <div>
+
+
+
+                    <span class="section-kicker">
+
+                        EXPLORE THE COLLECTION
+
+                    </span>
+
+
+
+                    <h2>Discover <span>movies.</span></h2>
+
+
+
+                    <p class="section-description">
+
+                        Explore handpicked collections across different movie worlds.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div id="discoverMessage" class="message"></div>
+
+
+
+            <div id="collectionsContainer">
+
+                <div class="loading-state">
+
+                    Loading movie collections...
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- =================================================
+
+             RECOMMENDATIONS SECTION
+
+        ================================================== -->
+
+
+
+        <section
+
+            class="content-section recommendation-section"
+
+            id="recommendations"
+
+        >
+
+
+
+            <div class="section-heading">
+
+
+
+                <div>
+
+
+
+                    <span class="section-kicker">
+
+                        MADE FOR YOUR TASTE
+
+                    </span>
+
+
+
+                    <h2>Your personal <span>movie picks.</span></h2>
+
+
+
+                    <p class="section-description">
+
+                        Choose your preferences and let CineMate find your next favourite.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+                <span class="section-tag">
+
+                    HYBRID ENGINE
+
+                </span>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="preference-panel">
+
+
+
+                <div class="preference-group">
+
+
+
+                    <label class="preference-label">
+
+                        SELECT YOUR FAVOURITE GENRES
+
+                    </label>
+
+
+
+                    <div class="genre-options" id="genreOptions">
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Action">
+
+                            <span>Action</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Adventure">
+
+                            <span>Adventure</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Animation">
+
+                            <span>Animation</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Comedy">
+
+                            <span>Comedy</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Crime">
+
+                            <span>Crime</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Drama">
+
+                            <span>Drama</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Fantasy">
+
+                            <span>Fantasy</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Horror">
+
+                            <span>Horror</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Mystery">
+
+                            <span>Mystery</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Romance">
+
+                            <span>Romance</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Sci-Fi">
+
+                            <span>Sci-Fi</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Thriller">
+
+                            <span>Thriller</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="War">
+
+                            <span>War</span>
+
+                        </label>
+
+
+
+                        <label class="genre-chip">
+
+                            <input type="checkbox" value="Western">
+
+                            <span>Western</span>
+
+                        </label>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <div class="preference-bottom">
+
+
+
+                    <div class="language-field">
+
+
+
+                        <label
+
+                            class="preference-label"
+
+                            for="languageSelect"
+
+                        >
+
+                            PREFERRED LANGUAGE
+
+                        </label>
+
+
+
+                        <select id="languageSelect">
+
+
+
+                            <option value="">Any language</option>
+
+                            <option value="English">English</option>
+
+                            <option value="Hindi">Hindi</option>
+
+                            <option value="Bengali">Bengali</option>
+
+                            <option value="Japanese">Japanese</option>
+
+                            <option value="Korean">Korean</option>
+
+                            <option value="French">French</option>
+
+                            <option value="Spanish">Spanish</option>
+
+
+
+                        </select>
+
+
+
+                    </div>
+
+
+
+                    <button
+
+                        class="primary-button recommendation-button"
+
+                        id="recommendButton"
+
+                    >
+
+                        <span>✦</span>
+
+                        Generate My Recommendations
+
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+                <p class="preference-note">
+
+                    Your saved watchlist is also used to personalize your recommendations.
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+            <div
+
+                id="recommendationMessage"
+
+                class="message"
+
+                role="status"
+
+            ></div>
+
+
+
+            <div
+
+                id="recommendationResults"
+
+                class="movie-grid"
+
+            ></div>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- =================================================
+
+             WATCHLIST SECTION
+
+        ================================================== -->
+
+
+
+        <section
+
+            class="content-section watchlist-section"
+
+            id="watchlist"
+
+        >
+
+
+
+            <div class="section-heading">
+
+
+
+                <div>
+
+
+
+                    <span class="section-kicker">
+
+                        YOUR PERSONAL COLLECTION
+
+                    </span>
+
+
+
+                    <h2>My <span>watchlist.</span></h2>
+
+
+
+                    <p class="section-description">
+
+                        All the movies you want to watch, in one place.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+                <span class="section-tag" id="watchlistTotal">
+
+                    0 MOVIES
+
+                </span>
+
+
+
+            </div>
+
+
+
+            <div id="watchlistMessage" class="message"></div>
+
+
+
+            <div id="watchlistMovies" class="movie-grid"></div>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- =================================================
+
+             MOVIE DETAILS MODAL
+
+        ================================================== -->
+
+
+
+        <div
+
+            class="modal-overlay"
+
+            id="movieModal"
+
+            aria-hidden="true"
+
+        >
+
+
+
+            <div
+
+                class="movie-modal"
+
+                role="dialog"
+
+                aria-modal="true"
+
+                aria-labelledby="modalTitle"
+
+            >
+
+
+
+                <button
+
+                    class="modal-close"
+
+                    id="closeModal"
+
+                    aria-label="Close details"
+
+                >
+
+                    ×
+
+                </button>
+
+
+
+                <div id="movieDetailsContent"></div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- =================================================
+
+             LOGIN AND REGISTRATION MODAL
+
+        ================================================== -->
+
+
+
+        <div
+
+            class="auth-overlay"
+
+            id="authModal"
+
+            aria-hidden="true"
+
+            hidden
+
+        >
+
+
+
+            <div
+
+                class="auth-modal"
+
+                role="dialog"
+
+                aria-modal="true"
+
+                aria-labelledby="authTitle"
+
+            >
+
+
+
+                <button
+
+                    class="auth-close"
+
+                    id="closeAuthModal"
+
+                    type="button"
+
+                    aria-label="Close login"
+
+                >
+
+                    ×
+
+                </button>
+
+
+
+
+
+                <!-- AUTH BRAND -->
+
+
+
+                <div class="auth-brand">
+
+
+
+                    <div class="auth-logo">
+
+                        C
+
+                    </div>
+
+
+
+                    <span>
+
+                        Cine<span class="brand-highlight">Mate</span>
+
+                    </span>
+
+
+
+                </div>
+
+
+
+
+
+                <div class="auth-heading">
+
+
+
+                    <span class="section-kicker">
+
+                        YOUR MOVIE JOURNEY STARTS HERE
+
+                    </span>
+
+
+
+                    <h2 id="authTitle">
+
+                        Welcome <span>back.</span>
+
+                    </h2>
+
+
+
+                    <p id="authDescription">
+
+                        Sign in to continue exploring your movie universe.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- AUTH TABS -->
+
+
+
+                <div class="auth-tabs">
+
+
+
+                    <button
+
+                        class="auth-tab active"
+
+                        id="loginTab"
+
+                        type="button"
+
+                        data-auth-tab="login"
+
+                    >
+
+                        Sign In
+
+                    </button>
+
+
+
+                    <button
+
+                        class="auth-tab"
+
+                        id="registerTab"
+
+                        type="button"
+
+                        data-auth-tab="register"
+
+                    >
+
+                        Create Account
+
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- AUTH MESSAGE -->
+
+
+
+                <div
+
+                    class="auth-message"
+
+                    id="authMessage"
+
+                    role="status"
+
+                    aria-live="polite"
+
+                ></div>
+
+
+
+
+
+                <!-- LOGIN FORM -->
+
+
+
+                <form
+
+                    class="auth-form"
+
+                    id="authLoginForm"
+
+                    autocomplete="on"
+
+                >
+
+
+
+                    <div class="auth-input-group">
+
+
+
+                        <label for="loginEmail">
+
+                            EMAIL ADDRESS
+
+                        </label>
+
+
+
+                        <input
+
+                            type="email"
+
+                            id="loginEmail"
+
+                            name="email"
+
+                            placeholder="Enter your email"
+
+                            autocomplete="email"
+
+                            maxlength="254"
+
+                            required
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="auth-input-group">
+
+
+
+                        <label for="loginPassword">
+
+                            PASSWORD
+
+                        </label>
+
+
+
+                        <input
+
+                            type="password"
+
+                            id="loginPassword"
+
+                            name="password"
+
+                            placeholder="Enter your password"
+
+                            autocomplete="current-password"
+
+                            maxlength="128"
+
+                            required
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <button
+
+                        type="submit"
+
+                        class="auth-submit-button"
+
+                        id="loginSubmitButton"
+
+                    >
+
+                        Sign In <span>→</span>
+
+                    </button>
+
+
+
+
+
+                    <p class="auth-switch-text">
+
+                        New to CineMate?
+
+
+
+                        <button
+
+                            type="button"
+
+                            class="auth-switch-button"
+
+                            data-switch-auth="register"
+
+                        >
+
+                            Create an account
+
+                        </button>
+
+                    </p>
+
+
+
+                </form>
+
+
+
+
+
+                <!-- REGISTER FORM -->
+
+
+
+                <form
+
+                    class="auth-form"
+
+                    id="authRegisterForm"
+
+                    autocomplete="on"
+
+                    hidden
+
+                >
+
+
+
+                    <div class="auth-input-group">
+
+
+
+                        <label for="registerName">
+
+                            FULL NAME
+
+                        </label>
+
+
+
+                        <input
+
+                            type="text"
+
+                            id="registerName"
+
+                            name="name"
+
+                            placeholder="Enter your name"
+
+                            autocomplete="name"
+
+                            maxlength="80"
+
+                            required
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="auth-input-group">
+
+
+
+                        <label for="registerEmail">
+
+                            EMAIL ADDRESS
+
+                        </label>
+
+
+
+                        <input
+
+                            type="email"
+
+                            id="registerEmail"
+
+                            name="email"
+
+                            placeholder="Enter your email"
+
+                            autocomplete="email"
+
+                            maxlength="254"
+
+                            required
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="auth-input-group">
+
+
+
+                        <label for="registerPassword">
+
+                            CREATE PASSWORD
+
+                        </label>
+
+
+
+                        <input
+
+                            type="password"
+
+                            id="registerPassword"
+
+                            name="password"
+
+                            placeholder="Minimum 8 characters"
+
+                            autocomplete="new-password"
+
+                            minlength="8"
+
+                            maxlength="128"
+
+                            required
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <button
+
+                        type="submit"
+
+                        class="auth-submit-button"
+
+                        id="registerSubmitButton"
+
+                    >
+
+                        Create Account <span>→</span>
+
+                    </button>
+
+
+
+
+
+                    <p class="auth-switch-text">
+
+                        Already have an account?
+
+
+
+                        <button
+
+                            type="button"
+
+                            class="auth-switch-button"
+
+                            data-switch-auth="login"
+
+                        >
+
+                            Sign in
+
+                        </button>
+
+                    </p>
+
+
+
+                </form>
+
+
+
+
+
+                <div class="auth-footer">
+
+                    YOUR PERSONAL MOVIE UNIVERSE
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+    <!-- =================================================
+
+         FOOTER
+
+    ================================================== -->
+
+
+
+    <footer class="footer">
+
+
+
+        <a href="#home" class="brand footer-brand">
+
+
+
+            <span class="brand-icon">C</span>
+
+
+
+            <span>
+
+                Cine<span class="brand-highlight">Mate</span>
+
+            </span>
+
+
+
+        </a>
+
+
+
+        <p>
+
+            Your next favourite movie is waiting to be discovered.
+
+        </p>
+
+
+
+        <span class="footer-copy">
+
+            © 2026 CineMate. Movie data powered by OMDb.
+
+        </span>
+
+
+
+    </footer>
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+
+
+
+    <script
+
+        src="{{ url_for('static', filename='js/script.js') }}"
+
+        defer
+
+    ></script>
+
+
+
+</body>
+
+</html>
